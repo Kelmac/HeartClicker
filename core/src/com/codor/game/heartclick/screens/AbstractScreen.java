@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.codor.game.heartclick.HeartClickerGame;
 
 public abstract class AbstractScreen implements Screen {
@@ -17,6 +18,9 @@ public abstract class AbstractScreen implements Screen {
 	public AbstractScreen(HeartClickerGame game) {
 		this.game = game;
 		this.spriteBatch = new SpriteBatch();
+		stage = new Stage(new StretchViewport(HeartClickerGame.WIDTH, HeartClickerGame.HEIGHT));
+		Gdx.input.setInputProcessor(stage);
+
 		createCamera();
 	}
 
