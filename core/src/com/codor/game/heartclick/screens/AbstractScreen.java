@@ -16,6 +16,7 @@ public abstract class AbstractScreen implements Screen {
 
 	public AbstractScreen(HeartClickerGame game) {
 		this.game = game;
+		this.spriteBatch = new SpriteBatch();
 		createCamera();
 	}
 
@@ -67,7 +68,7 @@ public abstract class AbstractScreen implements Screen {
 	@Override
 	public void resize(int width, int height) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
