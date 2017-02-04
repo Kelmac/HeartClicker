@@ -13,7 +13,7 @@ public class Player extends Image {
 	private final static Integer STARTING_Y = HeartClickerGame.HEIGHT;
 
 	public Player() {
-		super(new Texture("fullheart"));
+		super(new Texture("fullheart.png"));
 
 		this.setOrigin(WIDTH / 2, HEIGH / 2);
 		this.setSize(WIDTH, HEIGH);
