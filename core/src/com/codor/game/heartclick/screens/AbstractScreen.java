@@ -27,8 +27,7 @@ public abstract class AbstractScreen implements Screen {
 
 	@Override
 	public void show() {
-		// TODO Auto-generated method stub
-
+		// wchodziz apierwszym razem
 	}
 
 	@Override
@@ -64,4 +63,11 @@ public abstract class AbstractScreen implements Screen {
 	public void dispose() {
 		game.dispose();
 	}
+
+	@Override
+	public void resize(int width, int height) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
