@@ -11,7 +11,7 @@ public class SplashScreen extends AbstractScreen {
 
 	public SplashScreen(final HeartClickerGame game) {
 		super(game);
-		init();
+
 
 		Timer.schedule(new Task() {
 
@@ -22,11 +22,7 @@ public class SplashScreen extends AbstractScreen {
 		}, 2.0f);
 	}
 
-	private void init() {
-		// TODO Menager Asset
-		splashImg = new Texture("badlogic.jpg");
 
-	}
 
 	@Override
 	public void render(float delta) {
@@ -35,6 +31,14 @@ public class SplashScreen extends AbstractScreen {
 		spriteBatch.draw(splashImg, HeartClickerGame.WIDTH / 2, HeartClickerGame.HEIGHT / 2);
 		spriteBatch.end();
 
+	}
+
+
+
+	@Override
+	protected void init() {
+		// TODO Auto-generated method stub
+		splashImg = new Texture("badlogic.jpg");
 	}
 
 }

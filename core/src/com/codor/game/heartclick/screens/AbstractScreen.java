@@ -22,7 +22,10 @@ public abstract class AbstractScreen implements Screen {
 		Gdx.input.setInputProcessor(stage);
 
 		createCamera();
+		init();
 	}
+
+protected abstract void init();
 
 	private void createCamera() {
 		this.camera = new OrthographicCamera();

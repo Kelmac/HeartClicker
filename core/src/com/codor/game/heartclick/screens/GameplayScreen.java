@@ -9,13 +9,10 @@ public class GameplayScreen extends AbstractScreen {
 
 	public GameplayScreen(HeartClickerGame game) {
 		super(game);
-		init();
+	
 	}
 
-	private void init() {
-		initPlayer();
-	}
-
+	
 	private void initPlayer() {
 		this.player = new Player();
 		stage.addActor(this.player);
@@ -34,6 +31,13 @@ public class GameplayScreen extends AbstractScreen {
 
 	private void update() {
 		stage.act();
+	}
+
+
+	@Override
+	protected void init() {
+		initPlayer();
+		
 	}
 
 }
