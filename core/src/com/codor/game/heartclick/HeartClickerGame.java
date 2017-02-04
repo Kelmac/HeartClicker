@@ -10,8 +10,21 @@ public class HeartClickerGame extends Game {
 	public final static String TITLE = "Heart Clicker";
 	public final static Integer WIDTH = 480;
 	public final static Integer HEIGHT = 700;
+
+	private Boolean paused;
 	SpriteBatch batch;
 	Texture img;
+
+	
+	
+	
+	public Boolean isPaused() {
+		return paused;
+	}
+
+	public void setPaused(Boolean paused) {
+		this.paused = paused;
+	}
 
 	@Override
 	public void create() {
