@@ -6,8 +6,8 @@ import com.codor.game.heartclick.HeartClickerGame;
 
 public class Player extends Image {
 
-	private final static Integer WIDTH = 110;
-	private final static Integer HEIGH = 90;
+	private final static Integer WIDTH = 64;
+	private final static Integer HEIGH = 64;
 
 	private final static Integer STARTING_X = HeartClickerGame.WIDTH / 2;
 	private final static Integer STARTING_Y = HeartClickerGame.HEIGHT / 2;
