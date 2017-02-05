@@ -12,6 +12,8 @@ public class HeartClickerGame extends Game {
 	public final static Integer WIDTH = 480;
 	public final static Integer HEIGHT = 700;
 
+	
+	private Integer score;
 	private Boolean paused;
 
 	public Boolean isPaused() {
@@ -25,6 +27,18 @@ public class HeartClickerGame extends Game {
 	@Override
 	public void create() {
 		this.setScreen(new SplashScreen(this));
+		this.score=0;
 	}
 
+	public Integer getScore() {
+		return this.score;
+	}
+
+	public void  addScore(){
+		this.score++;
+	}
+	public void sunstractScore(){
+		this.score--;
+	}
+	
 }
