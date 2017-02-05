@@ -1,6 +1,7 @@
 package com.codor.game.heartclick.entities;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.codor.game.heartclick.HeartClickerGame;
 
@@ -12,6 +13,8 @@ public class Player extends Image {
 	private final static Integer STARTING_X = HeartClickerGame.WIDTH / 2;
 	private final static Integer STARTING_Y = HeartClickerGame.HEIGHT / 2;
 
+	private Button playerButton;
+
 	public Player() {
 		super(new Texture("fullheart.png"));
 
@@ -20,7 +23,23 @@ public class Player extends Image {
 
 		// Starting position
 		this.setPosition(STARTING_X, STARTING_Y);
+		initPlayerButton();
+	}
 
+	
+	public Button getPlayerButton() {
+		return playerButton;
+	}
+
+
+	private void initPlayerButton() {
+		this.playerButton = new Button(new Button.ButtonStyle());
+		playerButton.setWidth(WIDTH);
+		playerButton.setHeight(HEIGH);
+		playerButton.setX(STARTING_X);
+		playerButton.setY(STARTING_Y);
+		playerButton.setDebug(true);
+		
 	}
 
 }
