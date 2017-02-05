@@ -25,7 +25,7 @@ public class GameplayScreen extends AbstractScreen {
 
 			@Override
 			public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
-				System.out.println("Click");
+				player.reactOnClick();
 				return super.touchDown(event, x, y, pointer, button);
 			}
 
@@ -46,6 +46,7 @@ public class GameplayScreen extends AbstractScreen {
 
 	private void update() {
 		stage.act();
+		player.updatePlayerButton();
 	}
 
 	@Override
