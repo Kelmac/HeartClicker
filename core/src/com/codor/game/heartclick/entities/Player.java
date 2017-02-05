@@ -1,6 +1,10 @@
 package com.codor.game.heartclick.entities;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.Interpolation;
+import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.scenes.scene2d.Action;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.codor.game.heartclick.HeartClickerGame;
@@ -26,11 +30,9 @@ public class Player extends Image {
 		initPlayerButton();
 	}
 
-	
 	public Button getPlayerButton() {
 		return playerButton;
 	}
-
 
 	private void initPlayerButton() {
 		this.playerButton = new Button(new Button.ButtonStyle());
@@ -38,8 +40,30 @@ public class Player extends Image {
 		playerButton.setHeight(HEIGH);
 		playerButton.setX(STARTING_X);
 		playerButton.setY(STARTING_Y);
-		playerButton.setDebug(true);
-		
+		playerButton.setDebug(false);
+
 	}
 
+	public void reactOnClick() {
+		float timeAnimation = 1.5f;
+		int moveAmountX = MathUtils.random(-200, 200);
+		int moveAmountY = MathUtils.random(-300, 300);
+		int growAmount = MathUtils.random(-32, 64);
+		Action moveActiopn = Actions.sequence(
+				Actions.moveBy(moveAmountX, moveAmountY, timeAnimation, Interpolation.swingIn),
+				Actions.moveBy(-moveAmountX, -moveAmountY, timeAnimation, Interpolation.swingOut));
+		Action growAction = Actions.sequence(
+				Actions.sizeBy(growAmount, growAmount, timeAnimation, Interpolation.bounceIn),
+				Actions.sizeBy(-growAmount, -growAmount, timeAnimation, Interpolation.bounceOut));
+
+		this.addAction(growAction);
+		this.addAction(moveActiopn);
+	}
+
+	public void updatePlayerButton() {
+		playerButton.setWidth(this.getWidth());
+		playerButton.setHeight(this.getHeight());
+		playerButton.setX(this.getX());
+		playerButton.setY(this.getY());
+	}
 }
